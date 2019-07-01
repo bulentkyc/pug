@@ -1,0 +1,24 @@
+mixin createCard(personData)
+    .card
+        .name= personData.name
+        .last-name= personData.lastName
+        .join-date= personData.date
+
+doctype html
+html
+    head
+        title Attendees Id cards with Mixins in Pug
+        style.
+            .card {
+                border: 1px solid black;
+                padding: 10px;
+                width: 250px;
+            }
+    body
+        .card
+            .name Bulent
+            .last-name Kayici
+            .join-date 2018
+        - const a1 = {name: 'Koku', lastName:'Buss', date: 2019}
+        +createCard(a1)
+        +createCard(person)
